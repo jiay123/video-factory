@@ -1,0 +1,42 @@
+# 密钥与本地配置
+.env
+*.key
+*.token
+
+# 成片与媒体（防漏内容）
+*.mp4
+*.mov
+*.mkv
+*.mp3
+*.wav
+*.m4a
+*.gif
+
+# 帧图与截图（默认全忽略，docs 配图例外）
+*.jpg
+*.jpeg
+*.png
+*.webp
+!docs/**
+
+# 渲染与依赖
+node_modules/
+out/
+dist/
+build/
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# 模型权重
+models/
+*.safetensors
+*.bin
+*.onnx
+
+# 日志与系统
+*.log
+.DS_Store
+Thumbs.db

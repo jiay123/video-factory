@@ -1,0 +1,120 @@
+{
+  "episode": "ep10",
+  "title": "Jev被挤爆了",
+  "created": "2026-09-23",
+  "qc": {
+    "model": "laya-rl-agent",
+    "date": "2026-09-23",
+    "raw": {
+      "model": "laya-rl-agent",
+      "answers": {
+        "钩子够不够抓人": {
+          "type": "noul",
+          "noul": 0.9999,
+          "confidence": 0.9999,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "有没有漏洞/硬伤": {
+          "type": "noul",
+          "noul": 0.9786,
+          "confidence": 0.9786,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "爆款潜力": {
+          "type": "score",
+          "score": 1.6417,
+          "legend": {
+            "0": "扑街",
+            "1": "一般",
+            "2": "有机会",
+            "3": "不错",
+            "4": "爆款潜力"
+          },
+          "probabilities": {
+            "0": 0.1904,
+            "1": 0.2395,
+            "2": 0.3349,
+            "3": 0.2084,
+            "4": 0.0268
+          },
+          "confidence": 0.1001,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "最像哪种类型": {
+          "type": "choice",
+          "choice": "炫酷技术秀",
+          "probabilities": {
+            "省钱干货": 0.2074,
+            "涨见识新闻": 0.0407,
+            "炫酷技术秀": 0.7519
+          },
+          "confidence": 0.3892,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "观众是哪类": {
+          "type": "choice",
+          "choice": "新手小白",
+          "probabilities": {
+            "新手小白": 0.3988,
+            "上班族": 0.3047,
+            "学生党": 0.2966
+          },
+          "confidence": 0.0086,
+          "action": {
+            "act_probability": 1.0
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 1053,
+        "output_tokens": 0
+      }
+    },
+    "decisions": [
+      {
+        "q": "钩子够不够抓人",
+        "verdict": "采纳",
+        "note": "满分钩子，保留",
+        "laya": "是 99.99%"
+      },
+      {
+        "q": "有没有漏洞/硬伤",
+        "verdict": "驳回",
+        "note": "人工复核：文案里数字与事实均有出处，Laya 警报误报",
+        "laya": "是 97.86%"
+      },
+      {
+        "q": "爆款潜力",
+        "verdict": "记录",
+        "note": "偏低，与类型判偏可能连带，不据此改片",
+        "laya": "1.64/4 有机会"
+      },
+      {
+        "q": "最像哪种类型",
+        "verdict": "驳回",
+        "note": "实际是 AI 资讯/省钱向，判偏；下集开头更狠咬白嫖需求",
+        "laya": "炫酷技术秀 75.2%"
+      },
+      {
+        "q": "观众是哪类",
+        "verdict": "记录",
+        "note": "置信度 0.86% ≈ 无效输出，忽略",
+        "laya": "新手小白 39.9%"
+      }
+    ],
+    "final": "直接发不改"
+  },
+  "publish": {
+    "pack": "视频号早7:00 / 抖音10:30换皮 / 小红书中午图文 / 置顶评论扣工具",
+    "date": null
+  },
+  "feedback": null
+}
