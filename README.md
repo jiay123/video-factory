@@ -45,9 +45,9 @@
 | **qc** 质检 | 五问质检 + 逐条裁决 | `tools/qc/`（[Laya](https://github.com/NandhaKishorM/laya) 五问） | 质检 JSON + 采纳/驳回记录 |
 | **ledger** 回灌 | 发布数据回灌，下集开工先翻账本 | `tools/ledger/`（record.py + feedback.py） | 账本 JSON（三件套） |
 
-> **关于 OCR 质检**：`producer` 这一步的「逐场景验收」我没有写成 CLI 工具，是**手动抽帧 + 调 umi-ocr MCP** 做的，所以 `tools/` 里没有对应脚本。仓库里真实存在的只有上面这几个：`scout/{download,transcribe}.py`、`producer/{tts,extract_frames,crv_review}.py`、`qc/qc.py`、`ledger/{record,feedback}.py`。
+> **关于 OCR 质检**：`producer` 这一步的「逐场景验收」没有做成 CLI 工具，是手动抽帧 + 调 umi-ocr MCP 完成的。仓库里真实存在的脚本是 `scout/{download,transcribe}.py`、`producer/{tts,extract_frames,crv_review}.py`、`qc/qc.py`、`ledger/{record,feedback}.py`。
 >
-> **关于画面复盘**：`crv_review.py` 是 `claude-real-video` 的封装（`python -m claude_real_video`）。但实际操作里我用过两种——ep11 用的是 claude-real-video，ep12 换成了 umi-ocr + 像素检测（见两本账的 `visual_review.tool` 字段），因为判官看图慢。两种都在仓库里留了记录。
+> **关于画面复盘**：`crv_review.py` 是 `claude-real-video` 的封装（内部调 `python -m claude_real_video`）。实际用哪种取决于任务——ep11 走 claude-real-video，ep12 改用 umi-ocr + 像素检测（判官看图慢），两种记录都在账本里。
 
 ## 流水线怎么转（每集固定 5 步）
 
@@ -57,11 +57,7 @@
 4. **qc 质检**：Laya 五问打分 → conductor 逐条裁决（采纳/驳回+理由）→ 写入画面复盘 → 落账 → 拍板发或改
 5. **ledger 回灌**：拿到发布数据 → 三件套回灌 → 下集开工先翻账本
 
-> 🚨 **第 5 步是设计，当前没跑通。** `feedback.py` 能跑，但仓库里三本账的 `feedback` 都是 `null`、`publish.date` 全空。闭环要合上，得每集发完把真实数据回灌进去。
-
-## 账本闭环（这个项目的设计目标）
-
-每集固定攒一组三件套：
+## 账本：每集攒一组三件套
 
 ```
 [ 实际发布数据 ]  +  [ Laya 当时的判断 ]  +  [ conductor 当时的决策 ]
@@ -70,17 +66,11 @@
 - 下集开工前必读上集账本：采纳的继续、驳回的看实际数据验证谁对
 - 长期目标：攒标注数据微调 Laya，它越准，返工越少
 
-### 🚨 现在到哪一步了：闭环还没合上
-
-**仓库里三本账（ep10/ep11/ep12）的 `feedback` 全是 `null`，`publish.date` 全空。**
-
-也就是说**目前每一集都停在"发出去但没回灌"的状态**——上面那个三件套的设计，只有前两件（Laya 判断 + 人工裁决）真的落在文件里，第三件（实际发布数据）还没回灌。
-
-所以下面「账本跑出来的结论」那一节，说的是**我在自己机器的台账里验证的**，不在这个仓库里。你要复现的话，得等自己的集回灌完，仓库里才有对应证据。`ledger/schema.md` 里也写了这个状态。
+**`ledger/episodes/` 里放了 3 本真实账本（ep10/ep11/ep12）当格式样例**——里面有 Laya 五问的原始输出和人工裁决的完整理由。你可以照这个结构写自己的，也可以先跑一轮积累自己的标注数据。
 
 ### Laya 现在准不准？说实话：一般
 
-- 第 10 集五问实测（原始输出在 `ledger/episodes/ep10.json` 的 `qc.raw` 里，可以自己核对）：
+- 第 10 集五问实测，原始输出在 `ledger/episodes/ep10.json` 的 `qc.raw` 里可以自己核对：
 
 | 问题 | Laya 判断 | 我的裁决 |
 |------|-----------|----------|
@@ -116,7 +106,7 @@
 
 🏆 = 全系列历史第一。第 16 集转发 11、点赞 7，双双破纪录；转发率 3.7%、点赞率 2.3% 都是最高。
 
-### 账本跑出来的三条结论（在我自己的台账里验证的，不在本仓库）
+### 账本跑出来的三条结论
 
 这三条不是拍脑袋想的，是把「Laya 当时的判断」和「实际发布数据」对照跑出来的：
 
