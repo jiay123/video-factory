@@ -34,8 +34,12 @@ feedback      → 实际发布数据 + 对账结论（feedback 写入）
 - `decisions` 里 **采纳** 的 → 继续执行
 - `decisions` 里 **驳回** 的 → 看 `feedback.actual` 验证谁对了（这就是给 Laya 的标注）
 - `feedback.note` → 本集要规避的坑
+- `visual_review.next_actions` → 下一集画面复盘要执行的动作
 
-## 目标
+### 5. 画面复盘也入账
+
+`record.py --visual-review` 会把 `crv-review-auto/review.json` 的五项检查、发现和下一集动作写入 `visual_review`。它是制作复盘，不替代发布数据；下一集开工先看 `visual_review.next_actions`。
+
 
 攒 N 集后，得到三元组：
 

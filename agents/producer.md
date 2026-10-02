@@ -58,7 +58,25 @@ python tools/producer/extract_frames.py --video out/short.mp4 --at 0,4.5,9,13.5
 
 用 OCR 工具逐帧读字：**每场景大字全对 + 双火柴人 IP 合规** 才放行。10 场景全过 = 验收完成。
 
-### 7. 发布包
+### 7. 画面复盘（不可跳过）
+
+成片渲染后先让本地 `claude-real-video` 抓关键帧、拼图和掉帧报告：
+
+```bash
+python tools/producer/crv_review.py --video out/short.mp4 --timing src/audio/timing.txt --out crv-review-auto --no-transcribe
+```
+
+读取 `crv-review-auto/review.json`，按 `ocr_checkpoints_sec` 抽原尺寸帧并用 OCR 检查文字；再人工看 `grids/` 和 `report.html`，填写五项：
+
+- `scene_text_ocr`：每场景文字是否完整
+- `layout_overflow`：是否有文字或元素出框、遮挡
+- `blank_or_broken_frames`：是否空画面、黑帧、跳帧
+- `ip_consistency`：绿帽、勋章、左右双火柴人是否一致
+- `pacing`：场景时长、视觉变化和节奏是否异常
+
+`claude-real-video` 免费版只负责抽帧和拼图，不替 LLM 做语义判断；必须结合 OCR、源代码和实际画面裁决。`review.json` 的 `findings` 和 `next_actions` 要带到下一集。
+
+### 8. 发布包
 
 照 `examples/publish_pack.md` 出三平台包（视频号早7 / 抖音10:30换皮 / 小红书中午图文 + 置顶评论扣工具）。
 

@@ -21,7 +21,9 @@ def render_laya(ans: dict) -> str:
     t = ans.get("type")
     if t == "noul":
         p = ans["noul"]
-        return f"{'是' if p >= 0.5 else '否'} {p * 100:.2f}%"
+        if p >= 0.5:
+            return f"是 {p * 100:.2f}%"
+        return f"否 {ans.get('confidence', 1 - p) * 100:.2f}%"
     if t == "score":
         legend = ans.get("legend", {})
         idx = str(max(0, min(len(legend) - 1, int(round(ans["score"])))))
@@ -41,12 +43,17 @@ def main():
     ap.add_argument("--decisions", required=True, help="裁决 JSON 文件")
     ap.add_argument("--final", default="", help="最终决策，如：直接发不改")
     ap.add_argument("--pack", default="", help="发布包说明，如：视频号早7/抖音10:30换皮")
+    ap.add_argument("--visual-review", help="crv review.json 路径")
     args = ap.parse_args()
 
     with open(args.laya, encoding="utf-8") as f:
         raw = json.load(f)
     with open(args.decisions, encoding="utf-8") as f:
         decisions = json.load(f)
+    visual_review = None
+    if args.visual_review:
+        with open(args.visual_review, encoding="utf-8") as f:
+            visual_review = json.load(f)
 
     answers = raw.get("result", {}).get("answers", {})
     filled = []
@@ -79,6 +86,14 @@ def main():
                                "date": None})
     if args.pack:
         doc["publish"]["pack"] = args.pack
+    if visual_review is not None:
+        doc["visual_review"] = {
+            "path": os.path.abspath(args.visual_review),
+            "tool": visual_review.get("tool", ""),
+            "checklist": visual_review.get("checklist", {}),
+            "findings": visual_review.get("findings", []),
+            "next_actions": visual_review.get("next_actions", []),
+        }
     doc.setdefault("feedback", None)
 
     os.makedirs(LEDGER_DIR, exist_ok=True)

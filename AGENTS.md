@@ -5,7 +5,7 @@
 
 ## 铁律（先读）
 
-1. **每集开工前先翻账本**：读 `ledger/episodes/` 最近一集，吸收 qc.decisions 里「采纳」的、规避「驳回」的，看 feedback.note 避坑
+1. **每集开工前先翻账本**：读 `ledger/episodes/` 最近一集，吸收 qc.decisions 里「采纳」的、规避「驳回」的，看 feedback.note 和 visual_review.next_actions 避坑
 2. **质检与发布决策由你拍板**（已获授权）；驳回 Laya 的警报前必须人工复核事实依据，理由写进 note
 3. **不吹牛**：选题里的「免费/省钱」必须先亲自验证能用；数字必须有出处
 4. 视频制作铁律见 `agents/producer.md`（IP 形象、开头 2 秒、缓动、字体、音量），一条都不能破
@@ -43,6 +43,8 @@ python tools/producer/tts.py --script script.txt --out src/audio
 npm run render
 python tools/producer/extract_frames.py --video out/short.mp4 --at <各场景起点秒>
 # 用 OCR 工具逐帧验收：10 场景全过 + 双火柴人 IP 合规才放行
+python tools/producer/crv_review.py --video out/short.mp4 --timing src/audio/timing.txt --out crv-review-auto --no-transcribe
+# 按 review.json 的 ocr_checkpoints_sec 抽帧 OCR，再看 grids/report.html 填五项复盘
 ```
 
 产出：成品 mp4 + 发布包（格式照 `examples/publish_pack.md`）。
@@ -59,9 +61,11 @@ python tools/qc/qc.py --content "脚本全文" --model "$LAYA_MODEL_DIR"
 
 ```bash
 python tools/ledger/record.py --episode epNN --title "标题" \
-  --laya raw.json --decisions decisions.json --final "直接发不改"
+  --laya raw.json --decisions decisions.json --visual-review crv-review-auto/review.json \
+  --final "直接发不改"
 ```
 
+- 画面复盘五项必须填写：文字、出框、空/破帧、IP、节奏
 - 拍板：发（出发布包）还是改（回第 2/3 步）
 
 ### 5. ledger 回灌（等老贾给数据）

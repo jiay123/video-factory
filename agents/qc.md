@@ -32,7 +32,12 @@ python tools/qc/qc.py --file script.txt --out raw.json
 python tools/qc/qc.py --file script.txt --questions my_questions.json
 ```
 
-## 裁决规则（conductor 拍板）
+## 画面复盘
+
+成片完成后先跑 `tools/producer/crv_review.py`，再用 OCR 检查 `review.json` 里的场景中点，并人工复核 `grids/` 与 `report.html`。`claude-real-video` 免费版只抽帧，不做语义判断；`scene_text_ocr`、`layout_overflow`、`blank_or_broken_frames`、`ip_consistency`、`pacing` 五项必须由 conductor 填写结论。
+
+把复盘结果随 `record.py --visual-review review.json` 写入账本。下一集开工先读上一集 `visual_review.findings` 和 `visual_review.next_actions`。
+
 
 每问必须给三样：`verdict` + `note`，laya 原话由工具自动填。
 

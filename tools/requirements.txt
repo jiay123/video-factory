@@ -2,3 +2,4 @@ faster-whisper>=1.1.0
 edge-tts>=6.1.0
 yt-dlp>=2025.1.1
 laya>=0.3.4
+claude-real-video>=0.7.16

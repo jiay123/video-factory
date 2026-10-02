@@ -30,6 +30,14 @@
     "date": null
   },
 
+  "visual_review": {
+    "path": "项目目录/crv-review-auto/review.json",
+    "tool": "claude-real-video",
+    "checklist": { "scene_text_ocr": "pass" },
+    "findings": [],
+    "next_actions": []
+  },
+
   "feedback": null
 }
 ```
@@ -41,6 +49,7 @@
 | Laya 当时的判断 | `qc.raw` + `qc.decisions[].laya` | `record.py`，之后冻结 |
 | 你的当时决策 | `qc.decisions[].verdict/note` + `qc.final` | `record.py`，之后冻结 |
 | 实际发布数据 | `publish.date` + `feedback.actual/note` | `feedback.py` |
+| 画面复盘 | `visual_review.checklist/findings/next_actions` | `record.py --visual-review` |
 
 ## 状态机
 
