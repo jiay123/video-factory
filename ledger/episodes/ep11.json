@@ -1,145 +1,145 @@
-{
-  "episode": "ep11",
-  "title": "第11集·古诗一键变动画",
-  "created": "2026-09-25",
-  "qc": {
-    "model": "laya-rl-agent",
-    "date": "2026-09-25",
-    "raw": {
-      "model": "laya-rl-agent",
-      "answers": {
-        "钩子够不够抓人": {
-          "type": "noul",
-          "noul": 0.6661,
-          "confidence": 0.6661,
-          "action": {
-            "act_probability": 1.0
-          }
-        },
-        "有没有漏洞/硬伤": {
-          "type": "noul",
-          "noul": 0.1978,
-          "confidence": 0.8022,
-          "action": {
-            "act_probability": 1.0
-          }
-        },
-        "爆款潜力": {
-          "type": "score",
-          "score": 1.9828,
-          "legend": {
-            "0": "扑街",
-            "1": "一般",
-            "2": "有机会",
-            "3": "不错",
-            "4": "爆款潜力"
-          },
-          "probabilities": {
-            "0": 0.1638,
-            "1": 0.2431,
-            "2": 0.2038,
-            "3": 0.2253,
-            "4": 0.1641
-          },
-          "confidence": 0.008,
-          "action": {
-            "act_probability": 1.0
-          }
-        },
-        "最像哪种类型": {
-          "type": "choice",
-          "choice": "省钱干货",
-          "probabilities": {
-            "省钱干货": 0.7167,
-            "涨见识新闻": 0.0929,
-            "炫酷技术秀": 0.1904
-          },
-          "confidence": 0.2943,
-          "action": {
-            "act_probability": 1.0
-          }
-        },
-        "观众是哪类": {
-          "type": "choice",
-          "choice": "新手小白",
-          "probabilities": {
-            "新手小白": 0.929,
-            "上班族": 0.0652,
-            "学生党": 0.0058
-          },
-          "confidence": 0.7486,
-          "action": {
-            "act_probability": 1.0
-          }
-        }
-      },
-      "usage": {
-        "input_tokens": 1030,
-        "output_tokens": 0
-      }
-    },
-    "decisions": [
-      {
-        "q": "钩子够不够抓人",
-        "verdict": "采纳",
-        "note": "Laya为66.61%，合格但不算强；已在前2秒补上‘居然不用手剪’，同时保留‘古诗一键变动画’主角与闪亮框。",
-        "laya": "是 66.61%"
-      },
-      {
-        "q": "有没有漏洞/硬伤",
-        "verdict": "采纳",
-        "note": "Laya认为硬伤概率低；文案已明确说明图片和动画需要Agnes账号，并主动交代仓库只有3星、1次提交。",
-        "laya": "否 80.22%"
-      },
-      {
-        "q": "爆款潜力",
-        "verdict": "记录",
-        "note": "Laya评分1.9828，偏一般；题材时效性弱，保留为开源项目内容线试发，下一期继续用更强结果型钩子。",
-        "laya": "1.98/4 有机会"
-      },
-      {
-        "q": "最像哪种类型",
-        "verdict": "记录",
-        "note": "Laya判为省钱干货71.67%；实际更接近开源项目介绍，发布时仍按AI工具干货包装。",
-        "laya": "省钱干货 71.7%"
-      },
-      {
-        "q": "观众是哪类",
-        "verdict": "采纳",
-        "note": "Laya判新手小白92.9%，与视频号当前受众一致。",
-        "laya": "新手小白 92.9%"
-      }
-    ],
-    "final": "直接发不改"
-  },
-  "publish": {
-    "pack": "视频号早7点；发布后置顶评论：想要项目名扣动画",
-    "date": null
-  },
-  "feedback": null,
-  "visual_review": {
-    "path": "D:\\视频探索\\remotion-ep12\\crv-review-auto\\review.json",
-    "tool": "claude-real-video",
-    "checklist": {
-      "scene_text_ocr": "pass",
-      "layout_overflow": "pass",
-      "blank_or_broken_frames": "pass",
-      "ip_consistency": "pass",
-      "pacing": "pass_with_watch"
-    },
-    "findings": [
-      "修复后 10/10 场景中点 OCR 成功；第四场景的‘生成动画’四字完整可读。",
-      "旧版同帧 OCR 只读到‘生成动’，新版文字中心约 x=864，落在第四列预期中心约 x=865.5 的范围内，确认偏移已修正。",
-      "修复后保留 60/65 帧并生成 7 张拼图；10 个场景中点均有文字，没有空场景或明显破帧。",
-      "10 个检点均检测到左右两侧火柴人的金黄色像素，IP 位置未因本次布局修复改变。",
-      "场景音频长度为 4.10-5.74 秒；CRV 报告的 59 次视觉变化主要包含粒子运动，不等于 59 次硬切。",
-      "免费版负责抽帧和拼图，不负责语义排版判断；本集结论结合 OCR、源代码布局和像素检测。"
-    ],
-    "next_actions": [
-      "修复后的 out/short.mp4 已复制为正式成片，文件大小 103697204 bytes、时长 49.941333 秒，发布前只需人工确认上传文件。",
-      "下一集在 0.5 秒内让主角、情绪词和闪亮框完整可读。",
-      "每集保留 crv-review-auto 复盘目录，并把 review.json 的失败项写入下一集 producer 清单。",
-      "若 OCR 少字、画面空白或场景时长异常，先回退 Short.tsx 再发布。"
-    ]
-  }
+﻿{
+    "episode":  "ep11",
+    "title":  "第11集·古诗一键变动画",
+    "created":  "2026-09-25",
+    "qc":  {
+               "model":  "laya-rl-agent",
+               "date":  "2026-09-25",
+               "raw":  {
+                           "model":  "laya-rl-agent",
+                           "answers":  {
+                                           "钩子够不够抓人":  {
+                                                           "type":  "noul",
+                                                           "noul":  0.6661,
+                                                           "confidence":  0.6661,
+                                                           "action":  {
+                                                                          "act_probability":  1.0
+                                                                      }
+                                                       },
+                                           "有没有漏洞/硬伤":  {
+                                                            "type":  "noul",
+                                                            "noul":  0.1978,
+                                                            "confidence":  0.8022,
+                                                            "action":  {
+                                                                           "act_probability":  1.0
+                                                                       }
+                                                        },
+                                           "爆款潜力":  {
+                                                        "type":  "score",
+                                                        "score":  1.9828,
+                                                        "legend":  {
+                                                                       "0":  "扑街",
+                                                                       "1":  "一般",
+                                                                       "2":  "有机会",
+                                                                       "3":  "不错",
+                                                                       "4":  "爆款潜力"
+                                                                   },
+                                                        "probabilities":  {
+                                                                              "0":  0.1638,
+                                                                              "1":  0.2431,
+                                                                              "2":  0.2038,
+                                                                              "3":  0.2253,
+                                                                              "4":  0.1641
+                                                                          },
+                                                        "confidence":  0.008,
+                                                        "action":  {
+                                                                       "act_probability":  1.0
+                                                                   }
+                                                    },
+                                           "最像哪种类型":  {
+                                                          "type":  "choice",
+                                                          "choice":  "省钱干货",
+                                                          "probabilities":  {
+                                                                                "省钱干货":  0.7167,
+                                                                                "涨见识新闻":  0.0929,
+                                                                                "炫酷技术秀":  0.1904
+                                                                            },
+                                                          "confidence":  0.2943,
+                                                          "action":  {
+                                                                         "act_probability":  1.0
+                                                                     }
+                                                      },
+                                           "观众是哪类":  {
+                                                         "type":  "choice",
+                                                         "choice":  "新手小白",
+                                                         "probabilities":  {
+                                                                               "新手小白":  0.929,
+                                                                               "上班族":  0.0652,
+                                                                               "学生党":  0.0058
+                                                                           },
+                                                         "confidence":  0.7486,
+                                                         "action":  {
+                                                                        "act_probability":  1.0
+                                                                    }
+                                                     }
+                                       },
+                           "usage":  {
+                                         "input_tokens":  1030,
+                                         "output_tokens":  0
+                                     }
+                       },
+               "decisions":  [
+                                 {
+                                     "q":  "钩子够不够抓人",
+                                     "verdict":  "采纳",
+                                     "note":  "Laya为66.61%，合格但不算强；已在前2秒补上‘居然不用手剪’，同时保留‘古诗一键变动画’主角与闪亮框。",
+                                     "laya":  "是 66.61%"
+                                 },
+                                 {
+                                     "q":  "有没有漏洞/硬伤",
+                                     "verdict":  "采纳",
+                                     "note":  "Laya认为硬伤概率低；文案已明确说明图片和动画需要Agnes账号，并主动交代仓库只有3星、1次提交。",
+                                     "laya":  "否 80.22%"
+                                 },
+                                 {
+                                     "q":  "爆款潜力",
+                                     "verdict":  "记录",
+                                     "note":  "Laya评分1.9828，偏一般；题材时效性弱，保留为开源项目内容线试发，下一期继续用更强结果型钩子。",
+                                     "laya":  "1.98/4 有机会"
+                                 },
+                                 {
+                                     "q":  "最像哪种类型",
+                                     "verdict":  "记录",
+                                     "note":  "Laya判为省钱干货71.67%；实际更接近开源项目介绍，发布时仍按AI工具干货包装。",
+                                     "laya":  "省钱干货 71.7%"
+                                 },
+                                 {
+                                     "q":  "观众是哪类",
+                                     "verdict":  "采纳",
+                                     "note":  "Laya判新手小白92.9%，与视频号当前受众一致。",
+                                     "laya":  "新手小白 92.9%"
+                                 }
+                             ],
+               "final":  "直接发不改"
+           },
+    "publish":  {
+                    "pack":  "视频号早7点；发布后置顶评论：想要项目名扣动画",
+                    "date":  null
+                },
+    "feedback":  null,
+    "visual_review":  {
+                          "path":  "\u003c工程目录\u003e/crv-review-auto/review.json   # 路径见下：本机绝对路径不入库，换机器后请改成你自己的工程目录",
+                          "tool":  "claude-real-video",
+                          "checklist":  {
+                                            "scene_text_ocr":  "pass",
+                                            "layout_overflow":  "pass",
+                                            "blank_or_broken_frames":  "pass",
+                                            "ip_consistency":  "pass",
+                                            "pacing":  "pass_with_watch"
+                                        },
+                          "findings":  [
+                                           "修复后 10/10 场景中点 OCR 成功；第四场景的‘生成动画’四字完整可读。",
+                                           "旧版同帧 OCR 只读到‘生成动’，新版文字中心约 x=864，落在第四列预期中心约 x=865.5 的范围内，确认偏移已修正。",
+                                           "修复后保留 60/65 帧并生成 7 张拼图；10 个场景中点均有文字，没有空场景或明显破帧。",
+                                           "10 个检点均检测到左右两侧火柴人的金黄色像素，IP 位置未因本次布局修复改变。",
+                                           "场景音频长度为 4.10-5.74 秒；CRV 报告的 59 次视觉变化主要包含粒子运动，不等于 59 次硬切。",
+                                           "免费版负责抽帧和拼图，不负责语义排版判断；本集结论结合 OCR、源代码布局和像素检测。"
+                                       ],
+                          "next_actions":  [
+                                               "修复后的 out/short.mp4 已复制为正式成片，文件大小 103697204 bytes、时长 49.941333 秒，发布前只需人工确认上传文件。",
+                                               "下一集在 0.5 秒内让主角、情绪词和闪亮框完整可读。",
+                                               "每集保留 crv-review-auto 复盘目录，并把 review.json 的失败项写入下一集 producer 清单。",
+                                               "若 OCR 少字、画面空白或场景时长异常，先回退 Short.tsx 再发布。"
+                                           ]
+                      }
 }
