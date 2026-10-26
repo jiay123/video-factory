@@ -8,31 +8,19 @@
 
 <sub>上面五格是第 16 集《VoiceStudio 白嫖版 ElevenLabs》的实际画面——全部由本仓库的 pipeline 产出，没有手工剪辑。5 帧抽自 3s / 12s / 24s / 38s / 46s。</sub>
 
-## 作品欣赏（5 条视频，直接在页面里播）
+## 作品欣赏（2 条代表作，直接在页面里播）
 
 每条视频独立一个播放器，**点播放键直接看**，不用下载。
 
-<!-- 👇 5 个 30 秒小样拖到这里，一人一个位置（见下方标题） -->
-
-### 1️⃣ ep24 Pipecat · AI装上嘴（**807 播放**全系列最高）
-
-### 2️⃣ ep16 VoiceStudio（**11转发/7点赞** 历史第一）
-
-### 3️⃣ ep38 orca · 一个人指挥一群AI（★104960）
-
-### 4️⃣ AI科普 · 大模型如何思考（向量箭头+接龙
+### 1️⃣ 线路一 · 火柴人讲解 | 《VoiceStudio 白嫖版 ElevenLabs》（**11转发/7点赞** 历史第一）
 
 https://github.com/user-attachments/assets/c5b50ab2-b5f4-44d9-a9e6-2b5e9d9bec78
 
-
+### 2️⃣ 线路二 · AI 科普 | 《大模型是如何思考的》（向量箭头+接龙链）
 
 https://github.com/user-attachments/assets/41982f0e-b9db-406b-b281-5c2dbbe71804
 
-链）
-
-### 5️⃣ 《重复》· 滚筒数字+五声定音
-
-> 🎬 **全片**（40-69秒，22-45MB）在 [Releases v1.0-demos](https://github.com/jiay123/video-factory/releases/tag/v1.0-demos) 下载。
+> 🎬 **更多全片**（38 集火柴人系列 + AI 科普系列，40-69 秒）在 [Releases v1.0-demos](https://github.com/jiay123/video-factory/releases/tag/v1.0-demos) 下载。
 > GitHub 平台限制：README 内嵌视频必须 ≤10MB，所以页面里放 30 秒精华小样，全片走 Releases。
 
 想做出同款？往下看「[Fork 后三步出片](#fork-后三步出片)」。
