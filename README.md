@@ -8,17 +8,15 @@
 
 <sub>上面五格是第 16 集《VoiceStudio 白嫖版 ElevenLabs》的实际画面——全部由本仓库的 pipeline 产出，没有手工剪辑。5 帧抽自 3s / 12s / 24s / 38s / 46s。</sub>
 
-## 作品欣赏（点开直接播）
+## 作品欣赏（点封面直接播）
 
-下面 5 条都是这条流水线 + 模板工程产出的真实成片，放在 `demos/` 目录，GitHub 网页上点开就能播：
+5 条真实成片，全片托管在 [Releases](https://github.com/jiay123/video-factory/releases/tag/v1.0-demos)。**点下面任意封面，直接播放**：
 
-| 视频 | 线路 | 看点 | 数据（视频号实测） |
-|------|------|------|------|
-| [ep24-pipecat.mp4](demos/ep24-pipecat.mp4) | 火柴人 | AI 装上嘴，"钩子先行"第一幕样板 | **807 播放**，全系列最高 |
-| [ep16-voicestudio.mp4](demos/ep16-voicestudio.mp4) | 火柴人 | 白嫖版 ElevenLabs，"替代品"选题 | **11 转发 / 7 点赞**，历史第一 |
-| [ep38-orca.mp4](demos/ep38-orca.mp4) | 火柴人 | 一个人指挥一群 AI（★104960 项目） | 最新第 38 集 |
-| [ai-kp-ep02-think.mp4](demos/ai-kp-ep02-think.mp4) | AI 科普 | 大模型如何思考：向量箭头 + 接龙链 | 竖屏 57.6s 定稿版 |
-| [repeat-v13.mp4](demos/repeat-v13.mp4) | 知识横屏 | 《重复》：滚筒数字 + 五声定音 | 第三条线样片 |
+| [<img src="docs/covers/cover-ep24.jpg" width="150">](https://github.com/jiay123/video-factory/releases/download/v1.0-demos/ep24-pipecat-full.mp4) | [<img src="docs/covers/cover-ep16.jpg" width="150">](https://github.com/jiay123/video-factory/releases/download/v1.0-demos/ep16-voicestudio-full.mp4) | [<img src="docs/covers/cover-ep38.jpg" width="150">](https://github.com/jiay123/video-factory/releases/download/v1.0-demos/ep38-orca-full.mp4) | [<img src="docs/covers/cover-ai-kp-ep02.jpg" width="150">](https://github.com/jiay123/video-factory/releases/download/v1.0-demos/ai-kp-ep02-think-full.mp4) | [<img src="docs/covers/cover-repeat.jpg" width="150">](https://github.com/jiay123/video-factory/releases/download/v1.0-demos/repeat-v13-full.mp4) |
+|---|---|---|---|---|
+| **ep24 Pipecat**<br>**807 播放**<br>全系列最高 | **ep16 VoiceStudio**<br>**11转发/7点赞**<br>历史第一 | **ep38 orca**<br>一个人指挥一群AI<br>★104960 项目 | **AI科普·大模型思考**<br>向量箭头+接龙链<br>竖屏57.6s定稿 | **《重复》**<br>滚筒数字<br>+五声定音 |
+
+> 🔎 每条都有 **30 秒预览小样**（`demos/previews/`，全部 ≤3MB）：在仓库里可直接看；把它拖进 README/Issue 编辑框还能内嵌播放（GitHub 官方限制：内嵌视频必须 ≤10MB，所以我们把全片放在 Releases）。
 
 想做出同款？往下看「[Fork 后三步出片](#fork-后三步出片)」。
 
