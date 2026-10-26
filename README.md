@@ -1,4 +1,4 @@
-# video-factory · 多智能体视频工厂
+﻿# video-factory · 多智能体视频工厂
 
 一个 LLM agent 当总调度（conductor），五个角色各司其职，把「拆片 → 文案 → 制作 → 质检 → 回灌」串成一条短视频流水线。
 
@@ -12,7 +12,7 @@
 
 5 条真实成片，全片托管在 [Releases](https://github.com/jiay123/video-factory/releases/tag/v1.0-demos)。**点下面任意封面，直接播放**：
 
-| [<img src="docs/covers/cover-ep24.jpg" width="150">](https://github.com/jiay123/video-factory/releases/download/v1.0-demos/ep24-pipecat-full.mp4) | [<img src="docs/covers/cover-ep16.jpg" width="150">](https://github.com/jiay123/video-factory/releases/download/v1.0-demos/ep16-voicestudio-full.mp4) | [<img src="docs/covers/cover-ep38.jpg" width="150">](https://github.com/jiay123/video-factory/releases/download/v1.0-demos/ep38-orca-full.mp4) | [<img src="docs/covers/cover-ai-kp-ep02.jpg" width="150">](https://github.com/jiay123/video-factory/releases/download/v1.0-demos/ai-kp-ep02-think-full.mp4) | [<img src="docs/covers/cover-repeat.jpg" width="150">](https://github.com/jiay123/video-factory/releases/download/v1.0-demos/repeat-v13-full.mp4) |
+| [<img src="docs/covers/cover-ep24.jpg" width="150">](https://raw.githubusercontent.com/jiay123/video-factory/main/demos/ep24-pipecat.mp4) | [<img src="docs/covers/cover-ep16.jpg" width="150">](https://raw.githubusercontent.com/jiay123/video-factory/main/demos/ep16-voicestudio.mp4) | [<img src="docs/covers/cover-ep38.jpg" width="150">](https://raw.githubusercontent.com/jiay123/video-factory/main/demos/ep38-orca.mp4) | [<img src="docs/covers/cover-ai-kp-ep02.jpg" width="150">](https://raw.githubusercontent.com/jiay123/video-factory/main/demos/ai-kp-ep02-think.mp4) | [<img src="docs/covers/cover-repeat.jpg" width="150">](https://raw.githubusercontent.com/jiay123/video-factory/main/demos/repeat-v13.mp4) |
 |---|---|---|---|---|
 | **ep24 Pipecat**<br>**807 播放**<br>全系列最高 | **ep16 VoiceStudio**<br>**11转发/7点赞**<br>历史第一 | **ep38 orca**<br>一个人指挥一群AI<br>★104960 项目 | **AI科普·大模型思考**<br>向量箭头+接龙链<br>竖屏57.6s定稿 | **《重复》**<br>滚筒数字<br>+五声定音 |
 
