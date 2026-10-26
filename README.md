@@ -8,15 +8,24 @@
 
 <sub>上面五格是第 16 集《VoiceStudio 白嫖版 ElevenLabs》的实际画面——全部由本仓库的 pipeline 产出，没有手工剪辑。5 帧抽自 3s / 12s / 24s / 38s / 46s。</sub>
 
-## 作品欣赏（点封面直接播）
+## 作品欣赏（5 条视频，直接在页面里播）
 
-5 条真实成片，全片托管在 [Releases](https://github.com/jiay123/video-factory/releases/tag/v1.0-demos)。**点下面任意封面，直接播放**：
+每条视频独立一个播放器，**点播放键直接看**，不用下载。
 
-| [<img src="docs/covers/cover-ep24.jpg" width="150">](https://raw.githubusercontent.com/jiay123/video-factory/main/demos/ep24-pipecat.mp4) | [<img src="docs/covers/cover-ep16.jpg" width="150">](https://raw.githubusercontent.com/jiay123/video-factory/main/demos/ep16-voicestudio.mp4) | [<img src="docs/covers/cover-ep38.jpg" width="150">](https://raw.githubusercontent.com/jiay123/video-factory/main/demos/ep38-orca.mp4) | [<img src="docs/covers/cover-ai-kp-ep02.jpg" width="150">](https://raw.githubusercontent.com/jiay123/video-factory/main/demos/ai-kp-ep02-think.mp4) | [<img src="docs/covers/cover-repeat.jpg" width="150">](https://raw.githubusercontent.com/jiay123/video-factory/main/demos/repeat-v13.mp4) |
-|---|---|---|---|---|
-| **ep24 Pipecat**<br>**807 播放**<br>全系列最高 | **ep16 VoiceStudio**<br>**11转发/7点赞**<br>历史第一 | **ep38 orca**<br>一个人指挥一群AI<br>★104960 项目 | **AI科普·大模型思考**<br>向量箭头+接龙链<br>竖屏57.6s定稿 | **《重复》**<br>滚筒数字<br>+五声定音 |
+<!-- 👇 5 个 30 秒小样拖到这里，一人一个位置（见下方标题） -->
 
-> 🔎 每条都有 **30 秒预览小样**（`demos/previews/`，全部 ≤3MB）：在仓库里可直接看；把它拖进 README/Issue 编辑框还能内嵌播放（GitHub 官方限制：内嵌视频必须 ≤10MB，所以我们把全片放在 Releases）。
+### 1️⃣ ep24 Pipecat · AI装上嘴（**807 播放**全系列最高）
+
+### 2️⃣ ep16 VoiceStudio（**11转发/7点赞** 历史第一）
+
+### 3️⃣ ep38 orca · 一个人指挥一群AI（★104960）
+
+### 4️⃣ AI科普 · 大模型如何思考（向量箭头+接龙链）
+
+### 5️⃣ 《重复》· 滚筒数字+五声定音
+
+> 🎬 **全片**（40-69秒，22-45MB）在 [Releases v1.0-demos](https://github.com/jiay123/video-factory/releases/tag/v1.0-demos) 下载。
+> GitHub 平台限制：README 内嵌视频必须 ≤10MB，所以页面里放 30 秒精华小样，全片走 Releases。
 
 想做出同款？往下看「[Fork 后三步出片](#fork-后三步出片)」。
 
