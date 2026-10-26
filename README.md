@@ -20,7 +20,15 @@
 
 ### 3️⃣ ep38 orca · 一个人指挥一群AI（★104960）
 
-### 4️⃣ AI科普 · 大模型如何思考（向量箭头+接龙链）
+### 4️⃣ AI科普 · 大模型如何思考（向量箭头+接龙
+
+https://github.com/user-attachments/assets/c5b50ab2-b5f4-44d9-a9e6-2b5e9d9bec78
+
+
+
+https://github.com/user-attachments/assets/41982f0e-b9db-406b-b281-5c2dbbe71804
+
+链）
 
 ### 5️⃣ 《重复》· 滚筒数字+五声定音
 
