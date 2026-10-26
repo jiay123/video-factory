@@ -1,3 +1,15 @@
+
+
+https://github.com/user-attachments/assets/5d2881c1-54f8-40e5-bf12-e99d80f2cf10
+
+
+
+https://github.com/user-attachments/assets/4e314404-dc48-4490-b870-55588149a378
+
+
+
+https://github.com/user-attachments/assets/c375b702-c0e8-4db6-a229-22c31fea419e
+
 ﻿# video-factory · 多智能体视频工厂
 
 一个 LLM agent 当总调度（conductor），五个角色各司其职，把「拆片 → 文案 → 制作 → 质检 → 回灌」串成一条短视频流水线。
@@ -21,6 +33,14 @@
 ### 3️⃣ ep38 orca · 一个人指挥一群AI（★104960）
 
 ### 4️⃣ AI科普 · 大模型如何思考（向量箭头+接龙链）
+
+https://github.com/user-attachments/assets/9281a189-79fd-4416-9a0b-6e09959aefb9
+
+
+
+https://github.com/user-attachments/assets/8f2901db-7601-4539-9141-a5ffb6337730
+
+
 
 ### 5️⃣ 《重复》· 滚筒数字+五声定音
 
