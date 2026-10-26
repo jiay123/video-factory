@@ -1,9 +1,9 @@
-# 密钥与本地配置
+﻿# 密钥与本地配置
 .env
 *.key
 *.token
 
-# 成片与媒体（防漏内容）
+# 成片与媒体（默认忽略，防漏内容）
 *.mp4
 *.mov
 *.mkv
@@ -11,12 +11,16 @@
 *.wav
 *.m4a
 *.gif
-
-# 帧图与截图（默认全忽略，docs 配图例外）
 *.jpg
 *.jpeg
 *.png
 *.webp
+
+# 例外：作品展示 demos + 模板自带素材 templates
+!demos/**
+!templates/**
+
+# docs 配图例外
 !docs/**
 
 # 渲染与依赖

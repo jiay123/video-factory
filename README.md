@@ -2,11 +2,25 @@
 
 一个 LLM agent 当总调度（conductor），五个角色各司其职，把「拆片 → 文案 → 制作 → 质检 → 回灌」串成一条短视频流水线。
 
-这不是概念图。同一条流水线已实打实做出 **19 集火柴人短视频**（单集 40-69 秒），**已发布 12 集**，单账号自然流量（未投流）单集最高 **427 播放**。其中第 16 集拿到 **11 转发 / 7 点赞**，转发和点赞都是全系列历史第一。下文数字全部来自真实台账（截至 2026-10-02），没刷量，没吹牛。
+这不是概念图。同一条流水线已实打实做出 **38 集火柴人短视频**（单集 40-69 秒），单账号自然流量（未投流）单集最高 **807 播放**（第 24 集 Pipecat）。此前第 16 集拿到 **11 转发 / 7 点赞**，转发和点赞都是当时全系列历史第一。下文数字全部来自真实台账，没刷量，没吹牛。
 
 ![流水线产出的第16集实际画面](docs/demo-strip.jpg)
 
 <sub>上面五格是第 16 集《VoiceStudio 白嫖版 ElevenLabs》的实际画面——全部由本仓库的 pipeline 产出，没有手工剪辑。5 帧抽自 3s / 12s / 24s / 38s / 46s。</sub>
+
+## 作品欣赏（点开直接播）
+
+下面 5 条都是这条流水线 + 模板工程产出的真实成片，放在 `demos/` 目录，GitHub 网页上点开就能播：
+
+| 视频 | 线路 | 看点 | 数据（视频号实测） |
+|------|------|------|------|
+| [ep24-pipecat.mp4](demos/ep24-pipecat.mp4) | 火柴人 | AI 装上嘴，"钩子先行"第一幕样板 | **807 播放**，全系列最高 |
+| [ep16-voicestudio.mp4](demos/ep16-voicestudio.mp4) | 火柴人 | 白嫖版 ElevenLabs，"替代品"选题 | **11 转发 / 7 点赞**，历史第一 |
+| [ep38-orca.mp4](demos/ep38-orca.mp4) | 火柴人 | 一个人指挥一群 AI（★104960 项目） | 最新第 38 集 |
+| [ai-kp-ep02-think.mp4](demos/ai-kp-ep02-think.mp4) | AI 科普 | 大模型如何思考：向量箭头 + 接龙链 | 竖屏 57.6s 定稿版 |
+| [repeat-v13.mp4](demos/repeat-v13.mp4) | 知识横屏 | 《重复》：滚筒数字 + 五声定音 | 第三条线样片 |
+
+想做出同款？往下看「[Fork 后三步出片](#fork-后三步出片)」。
 
 ## 它是什么，不是什么
 
@@ -83,12 +97,13 @@
 - Laya 官方模型卡自己也写明：zero-shot 接近随机、概率偏过度自信，「a fast base to specialise, not a zero-shot decision engine」。所以它的输出当草稿纸，**conductor 拍板**
 - 顺带一提：它回答时 `output_tokens = 0`——不生成文字，只出概率，所以没有幻觉和解析问题
 
-## 实测记录（截至 2026-10-02，单账号自然流量，未投流，视频号）
+## 实测记录（截至 2026-10-26，单账号自然流量，未投流，视频号）
 
-已制作 19 集，已发布 12 集。按互动数据排序，**转发率最高的是第 16 集**：
+已制作 38 集。**播放最高的是第 24 集**，**转发率最高的是第 16 集**：
 
 | 集 | 标题 | 发布 | 播放 | 转发 | 点赞 | 推荐 |
 |---|------|------|------|------|------|------|
+| **第24集** | **Pipecat·AI装上嘴** | 10月 | **807** 🏆 | 6 | 9 | 2 |
 | 第2集 | 别再给AI充会员（Colibri） | 9/18 | **427** | 5 | 1 | 1 |
 | 第8集 | TypeSafe AI互联网时刻 | 9/22 | **426** | 4 | 1 | — |
 | 第11集 | 古诗一键变动画 | 9/27 | 340 | 2 | 2 | — |
@@ -134,13 +149,39 @@ Laya 在第 10 集说这条是"炫酷技术秀"，人工判定它其实是"省�
 
 **诚实说明**：单账号冷启动，播放量天花板就在 200-430 之间，我们不承诺爆款。本项目提供的是一条**可复用、可对账**的流水线——把每一次判断都记下来，让下一集比这一集有依据地好，而不是靠感觉。
 
+## Fork 后三步出片
+
+仓库自带两条线的完整 Remotion 模板工程（`templates/`），fork 后不用从零搭：
+
+| 模板 | 是什么 | 出处 |
+|------|--------|------|
+| `templates/line1-matchman/` | 火柴人老贾 IP 竖屏模板：两只火柴人全程张嘴说话、所有文字从嘴里飞出落位、第一幕"钩子先行 + 巨字砸落"已定型 | 第 34 集底座 |
+| `templates/line2-ai-kp/` | AI 科普竖屏全套：EP01-EP07 的全部画面 src + `scripts/` 生成器 + BGM/音效素材 | 实际生产线 |
+
+**三步：**
+
+```bash
+# 1. 装依赖（进模板目录）
+cd templates/line1-matchman && npm install
+
+# 2. 改内容
+#    火柴人线：src/Short.tsx 换你的口播分镜 + src/chars.json 换配音时长
+#    配音：python tts/gen_tts_ep34.py（edge-tts，改文本即可），或自带 mp3 放 src/audio/
+#    科普线：改画面改 scripts/gen_ep*.py 重跑（生成器内部全是相对路径，fork 即跑）
+
+# 3. 渲染
+npm run render   # → out/xxx.mp4
+```
+
+每集内容只换三样东西：口播文案、配音 mp3、字幕 chars.json。动画结构一格不用动。
+
 ## 快速开始
 
 ### 依赖
 
 - Python 3.10+、Node 18+、ffmpeg
 - `pip install -r tools/requirements.txt`
-- 渲染需要一个 Remotion 模板工程（复制你自己的上一期工程即可，见 `agents/producer.md`）
+- 渲染用仓库自带的 Remotion 模板工程 `templates/line1-matchman/` 或 `templates/line2-ai-kp/`（见「Fork 后三步出片」）
 - qc 角色需要 Laya：`pip install laya` + 下载 [laya-multilingual](https://huggingface.co/convaiinnovations/laya-multilingual) 权重，路径传给 `--model` 或设环境变量 `LAYA_MODEL_DIR`
 - 画面复盘需要 `pip install claude-real-video`，并确保 `ffmpeg` 在 PATH
 
@@ -188,6 +229,10 @@ python tools/ledger/feedback.py --episode ep10 --date 2026-09-24 \
 ```
 video-factory/
 ├── AGENTS.md              # conductor 总调度手册（agent 打开仓库先读这个）
+├── demos/                 # 5 条成片样例（GitHub 在线可播，见「作品欣赏」）
+├── templates/
+│   ├── line1-matchman/    # 火柴人竖屏模板（第 34 集底座）
+│   └── line2-ai-kp/       # AI 科普竖屏模板（EP01-07 + 生成器脚本 + BGM）
 ├── agents/                # 5 个角色卡
 │   ├── scout.md           # 拆片
 │   ├── writer.md          # 文案
@@ -215,7 +260,7 @@ video-factory/
 
 ## 隐私
 
-仓库不含成片、音频、账号密钥、服务器信息；账本只放质检判断与决策记录（均为文字与概率）。
+仓库不含账号密钥、服务器信息；`demos/` 里是已公开发布的成片样例，模板工程里的音频/BGM 同样来自已发布内容；账本只放质检判断与决策记录（均为文字与概率）。
 
 ## 依赖致谢
 
