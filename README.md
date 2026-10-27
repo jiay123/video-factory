@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/b7037fd5-653a-429d-bfb4-61f7aeef9cbd
+
 ﻿# video-factory · 多智能体视频工厂
 
 一个 LLM agent 当总调度（conductor），五个角色各司其职，把「拆片 → 文案 → 制作 → 质检 → 回灌」串成一条短视频流水线。
