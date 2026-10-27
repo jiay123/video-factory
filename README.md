@@ -8,7 +8,7 @@
 
 <sub>上面五格是第 16 集《VoiceStudio 白嫖版 ElevenLabs》的实际画面——全部由本仓库的 pipeline 产出，没有手工剪辑。5 帧抽自 3s / 12s / 24s / 38s / 46s。</sub>
 
-## 作品欣赏（2 条代表作，直接在页面里播）
+## 作品欣赏（3 条代表作，直接在页面里播）
 
 每条视频独立一个播放器，**点播放键直接看**，不用下载。
 
@@ -20,7 +20,15 @@ https://github.com/user-attachments/assets/c5b50ab2-b5f4-44d9-a9e6-2b5e9d9bec78
 
 https://github.com/user-attachments/assets/41982f0e-b9db-406b-b281-5c2dbbe71804
 
-> 🎬 **更多全片**（38 集火柴人系列 + AI 科普系列，40-69 秒）在 [Releases v1.0-demos](https://github.com/jiay123/video-factory/releases/tag/v1.0-demos) 下载。
+### 3️⃣ 线路二 · AI 科普 | 《RAG：先查资料再开口》（先查资料治 AI 瞎编，正确率 38%→92%）
+
+https://github.com/user-attachments/assets/EP06_待网页上传占位
+
+![第6集实际画面](docs/demo-strip-ep06.jpg)
+
+<sub>上面五格是第 6 集《RAG：先查资料再开口》的实际画面——AI 瞎编 → 挂上外置资料库 → 先查再答，一个动作把 SimpleQA 从 38% 拉到 92.46%（数字已实测）。五帧抽自 0s / 4.7s / 9.3s / 14s / 18.7s。</sub>
+
+> 🎬 **更多全片**（38 集火柴人系列 + AI 科普系列，38-59 秒）在 [Releases v1.0-demos](https://github.com/jiay123/video-factory/releases/tag/v1.0-demos) 下载，或在 [demos/ 目录](https://github.com/jiay123/video-factory/tree/main/demos) 直接看。
 > GitHub 平台限制：README 内嵌视频必须 ≤10MB，所以页面里放 30 秒精华小样，全片走 Releases。
 
 想做出同款？往下看「[Fork 后三步出片](#fork-后三步出片)」。
