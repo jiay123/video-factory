@@ -1,7 +1,3 @@
-
-
-https://github.com/user-attachments/assets/b7037fd5-653a-429d-bfb4-61f7aeef9cbd
-
 ﻿# video-factory · 多智能体视频工厂
 
 一个 LLM agent 当总调度（conductor），五个角色各司其职，把「拆片 → 文案 → 制作 → 质检 → 回灌」串成一条短视频流水线。
@@ -26,7 +22,7 @@ https://github.com/user-attachments/assets/41982f0e-b9db-406b-b281-5c2dbbe71804
 
 ### 3️⃣ 线路二 · AI 科普 | 《RAG：先查资料再开口》（先查资料治 AI 瞎编，正确率 38%→92%）
 
-https://github.com/user-attachments/assets/EP06_待网页上传占位
+https://github.com/user-attachments/assets/b7037fd5-653a-429d-bfb4-61f7aeef9cbd
 
 ![第6集实际画面](docs/demo-strip-ep06.jpg)
 
